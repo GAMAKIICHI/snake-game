@@ -19,6 +19,11 @@ class display:
         
         return display
 
+    def setFont(self):
+        font = pygame.font.Font('snake/font/slkscr.ttf', 80)
+
+        return font
+
     #Renders window
     def render(self):
         self.isRender = True
