@@ -16,10 +16,11 @@ def centerText(text, textHeight):
 
 titleTxt = window.setFont(80).render("Snake", True, fontColor)
 startBtn = window.setFont(48).render("Start", True, fontColor)
-leaderboardBtn = window.setFont(48).render("Start", True, fontColor)
+hiScoreBtn = window.setFont(48).render("Top Scores", True, fontColor)
 
-menuScene.blit(title,centerText(title,2.5))
+menuScene.blit(titleTxt, centerText(titleTxt,2.5))
 menuScene.blit(startBtn, centerText(startBtn, 1.8))
+menuScene.blit(hiScoreBtn, centerText(hiScoreBtn, 1.5))
 window.render()
 
 
