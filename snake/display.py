@@ -18,7 +18,7 @@ class display:
         display = pygame.display.set_mode((self.width, self.height))
         
         return display
-
+    
     def setFont(self, size):
         font = pygame.font.Font('snake/font/slkscr.ttf', size)
 
