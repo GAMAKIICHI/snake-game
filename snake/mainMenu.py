@@ -1,8 +1,18 @@
-from dis import dis
 import pygame
 from display import display
 
-width = 500
-height = 550
+pygame.font.init()
 
-menuDisplay = display(width, height, "Snake")
+width = 550
+height = 500
+
+window = display(width, height, "Snake")
+menuScene = window.setDisplay()
+
+text = window.setFont().render("Snake", True, "green")
+
+menuScene.blit(text,(50,50))
+window.render()
+
+
+
