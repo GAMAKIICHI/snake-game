@@ -1,5 +1,4 @@
 import pygame
-from display import display
 
 pygame.font.init()
 
@@ -21,9 +20,9 @@ def mainScene(window, scene):
     settingsBtn = window.setFont(40).render("Settings", True, fontColor)
 
     #Render texts
-    scene.blit(titleTxt, centerText(titleTxt,2.5))
-    scene.blit(startBtn, centerText(startBtn, 1.8))
-    scene.blit(settingsBtn, centerText(settingsBtn, 1.6))
+    scene.blit(titleTxt, centerText(titleTxt,3.5))
+    scene.blit(startBtn, centerText(startBtn, 2.5))
+    scene.blit(settingsBtn, centerText(settingsBtn, 2.1))
 
 
 
