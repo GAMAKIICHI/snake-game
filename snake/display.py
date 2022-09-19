@@ -12,15 +12,16 @@ class display:
         self.title = title
 
         pygame.display.set_caption(title)
-    
+
     #initialize a window to display
     def setDisplay(self):
-        self.display = pygame.display.set_mode((self.width, self.height))
-    
+        display = pygame.display.set_mode((self.width, self.height))
+        
+        return display
+
     #Renders window
     def render(self):
         self.isRender = True
-        self.setDisplay()
 
         #Required to close window
         while self.isRender:
@@ -28,3 +29,4 @@ class display:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.isRender = False
+        
