@@ -23,6 +23,11 @@ class display:
         font = pygame.font.Font('snake/font/slkscr.ttf', size)
 
         return font
+    
+    #Aligns text in the center of window
+    def centerText(self,text, textHeight):
+        alignText = text.get_rect(center = (self.width/2,self.height/textHeight))
+        return alignText
 
     #Renders window
     def render(self):
