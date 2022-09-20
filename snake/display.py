@@ -31,7 +31,11 @@ class display:
                     self.isRender = False
 
 class buttton():
-    pass
+    def __init__(self, scene) -> None:
+        self.scene = scene
+    
+    def createButton(self, color, alignB):
+        startBtn = pygame.draw.rect(self.scene, color, (alignB))
 
 
 
