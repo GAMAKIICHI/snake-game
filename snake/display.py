@@ -39,6 +39,7 @@ class button():
         btnTxt = createText(fontSize, text, textColor)
         centerBtn = centerText(btnTxt, buttonV, w, h)
         startBtn = pygame.draw.rect(self.scene, btnColor, (centerBtn))
+        
         scene.blit(btnTxt, centerBtn)
 
         mouse = pygame.mouse.get_pos()
