@@ -1,11 +1,12 @@
 import pygame
 from display import createText, centerText, button
 
-width = 550
-height = 500
-fontColor = "green"
-
 def mainScene(scene):
+
+    width = 550
+    height = 500
+    fontColor = "green"
+    btnColor = "black"
 
     #Vertical positioning for button
     titleVp = 3.5
@@ -18,8 +19,8 @@ def mainScene(scene):
 
     #Button
     btn = button(scene)
-    startBtn = btn.createButton(scene, "black", "Start", fontColor, 40, startVp, width, height)
-    settingBtn = btn.createButton(scene, "black", "Setting", fontColor, 40, settingsVp, width, height)
+    startBtn = btn.createButton(scene, btnColor, "Start", fontColor, 40, startVp, width, height)
+    settingBtn = btn.createButton(scene, btnColor, "Setting", fontColor, 40, settingsVp, width, height)
 
     #Display text to window
     scene.blit(titleTxt, centerTitle)
