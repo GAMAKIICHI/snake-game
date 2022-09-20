@@ -9,6 +9,8 @@ height = 500
 window = display(width, height, "Snake")
 initDisplay = window.setDisplay()
 
-mainScene(initDisplay)
-#settingScene(window,menuScene)
+SCENE_ONE = mainScene(initDisplay)
+SCENE_TWO = settingScene(initDisplay)
+
+SCENE_ONE
 window.render()

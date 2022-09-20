@@ -30,18 +30,27 @@ class display:
                 if event.type == pygame.QUIT:
                     self.isRender = False
 
-class buttton():
+class button():
     def __init__(self, scene) -> None:
         self.scene = scene
     
-    def createButton(self, color, alignB):
-        startBtn = pygame.draw.rect(self.scene, color, (alignB))
+    def createButton(self, scene, btnColor:str, text:str, textColor:str, fontSize:int, buttonV:int, w:int, h:int):
+
+        btnTxt = createText(fontSize, text, textColor)
+        centerBtn = centerText(btnTxt, buttonV, w, h)
+        startBtn = pygame.draw.rect(self.scene, btnColor, (centerBtn))
+
+        scene.blit(btnTxt, centerBtn)
+
+        mouse = pygame.mouse.get_pos()
 
 
+def createText(size, text, color):
+    pygame.font.init()
 
-def setFont(size):
-        font = pygame.font.Font('snake/font/slkscr.ttf', size)
-        return font
+    font = pygame.font.Font('snake/font/slkscr.ttf', size)
+    text = font.render(text, True, color)
+    return text
 
 #Aligns text in the center of window
 def centerText(text, textHeight, width, height):
