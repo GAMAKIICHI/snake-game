@@ -39,10 +39,18 @@ class button():
         btnTxt = createText(fontSize, text, textColor)
         centerBtn = centerText(btnTxt, buttonV, w, h)
         startBtn = pygame.draw.rect(self.scene, btnColor, (centerBtn))
-
+        
         scene.blit(btnTxt, centerBtn)
 
         mouse = pygame.mouse.get_pos()
+        while True:
+            scene.blit(btnTxt, centerBtn)
+            for event in pygame.event.get():
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    print("Button was clicked")
+                    pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_HAND)
+                else:
+                    pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
 
 
 def createText(size, text, color):
