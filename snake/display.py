@@ -18,16 +18,6 @@ class display:
         display = pygame.display.set_mode((self.width, self.height))
         
         return display
-    
-    def setFont(self, size):
-        font = pygame.font.Font('snake/font/slkscr.ttf', size)
-
-        return font
-    
-    #Aligns text in the center of window
-    def centerText(self,text, textHeight):
-        alignText = text.get_rect(center = (self.width/2,self.height/textHeight))
-        return alignText
 
     #Renders window
     def render(self):
@@ -39,4 +29,17 @@ class display:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.isRender = False
-        
+
+class buttton():
+    pass
+
+
+
+def setFont(size):
+        font = pygame.font.Font('snake/font/slkscr.ttf', size)
+        return font
+
+#Aligns text in the center of window
+def centerText(text, textHeight, width, height):
+    alignText = text.get_rect(center = (width/2,height/textHeight))
+    return alignText
