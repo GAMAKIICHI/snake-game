@@ -1,7 +1,10 @@
 import pygame
-from display import display
+from display import setFont, centerText
 pygame.font.init()
 
+
+width = 550
+height = 500
 fontColor = "green"
 
 def button(scene, alignRect):
@@ -15,18 +18,22 @@ def mainScene(window, scene):
     settingsHp = 2.1
 
     #Button text
-    titleTxt = window.setFont(80).render("Snake", True, fontColor)
-    startTxt = window.setFont(40).render("Start", True, fontColor)
-    settingsTxt = window.setFont(40).render("Settings", True, fontColor)
+    titleTxt = setFont(80).render("Snake", True, fontColor)
+    startTxt = setFont(40).render("Start", True, fontColor)
+    settingsTxt = setFont(40).render("Settings", True, fontColor)
 
-    titleBtn = button(scene, display.centerText(titleTxt, 3.5))
-    startBtn = button(scene, display.centerText(startTxt, 2.5))
-    settingBtn = button(scene, display.centerText(settingsTxt, 2.1))
+    centerTitle = centerText(titleTxt, titleHp, width, height)
+    centerStart = centerText(startTxt, startHp, width, height)
+    centerSettings = centerText(settingsTxt, settingsHp, width, height)
 
-    #Render texts
-    scene.blit(titleTxt, display.centerText(titleTxt,3.5))
-    scene.blit(startTxt, display.centerText(startTxt, 2.5))
-    scene.blit(settingsTxt, display.centerText(settingsTxt, 2.1))
+    titleBtn = button(scene, centerTitle)
+    startBtn = button(scene, centerStart)
+    settingBtn = button(scene, centerSettings)
+
+    #Display text to window
+    scene.blit(titleTxt, centerTitle)
+    scene.blit(startTxt, centerStart)
+    scene.blit(settingsTxt, centerSettings)
 
 
 

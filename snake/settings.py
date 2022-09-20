@@ -1,13 +1,16 @@
 import pygame
-from display import display
+from display import setFont, centerText
 
 pygame.font.init()
 
+
+width = 550
+height = 500
 fontColor = "green"
 
 def settingScene(window, scene):
     #Title
-    settingSceneTxt = window.setFont(80).render("Settings", True, fontColor)
+    settingSceneTxt = setFont(80).render("Settings", True, fontColor)
 
     #Render texts
-    scene.blit(settingSceneTxt, display.centerText(settingSceneTxt,3.5))
+    scene.blit(settingSceneTxt, centerText(settingSceneTxt,3.5, width, height))
