@@ -1,28 +1,32 @@
 import pygame
-
+from display import display
 pygame.font.init()
 
-width = 550
-height = 500
 fontColor = "green"
 
-#Aligns text in the center of window
-def centerText(text, textHeight):
-    alignText = text.get_rect(center = (width/2,height/textHeight))
-    return alignText
+def button(scene, alignRect):
+    startBtn = pygame.draw.rect(scene, "red", (alignRect))
 
 def mainScene(window, scene):
-    #Title
-    titleTxt = window.setFont(80).render("Snake", True, fontColor)
 
-    #Buttons
-    startBtn = window.setFont(40).render("Start", True, fontColor)
-    settingsBtn = window.setFont(40).render("Settings", True, fontColor)
+    #Horizontal positioning for button
+    titleHp = 3.5
+    startHp = 2.5
+    settingsHp = 2.1
+
+    #Button text
+    titleTxt = window.setFont(80).render("Snake", True, fontColor)
+    startTxt = window.setFont(40).render("Start", True, fontColor)
+    settingsTxt = window.setFont(40).render("Settings", True, fontColor)
+
+    titleBtn = button(scene, display.centerText(titleTxt, 3.5))
+    startBtn = button(scene, display.centerText(startTxt, 2.5))
+    settingBtn = button(scene, display.centerText(settingsTxt, 2.1))
 
     #Render texts
-    scene.blit(titleTxt, centerText(titleTxt,3.5))
-    scene.blit(startBtn, centerText(startBtn, 2.5))
-    scene.blit(settingsBtn, centerText(settingsBtn, 2.1))
+    scene.blit(titleTxt, display.centerText(titleTxt,3.5))
+    scene.blit(startTxt, display.centerText(startTxt, 2.5))
+    scene.blit(settingsTxt, display.centerText(settingsTxt, 2.1))
 
 
 
