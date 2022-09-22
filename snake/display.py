@@ -6,7 +6,6 @@ import pygame
 
 class display:
     def __init__(self, width:int, height:int, title:str = "Title"):
-        pygame.init()
 
         (self.width, self.height) = (width, height)
         self.title = title
@@ -32,14 +31,15 @@ class button():
         scene.blit(btnTxt, centerBtn)
 
         mouse = pygame.mouse.get_pos()
-        # while True:
-        #     scene.blit(btnTxt, centerBtn)
-        #     for event in pygame.event.get():
-        #         if event.type == pygame.MOUSEBUTTONDOWN:
-        #             print("Button was clicked")
-        #             pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_HAND)
-        #         else:
-        #             pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
+
+        for event in pygame.event.get():
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                print("Button was clicked")
+                pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_HAND)
+                break
+            else:
+                pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
+                print("Not clicked")
 
 
 def createText(size, text, color):
