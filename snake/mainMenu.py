@@ -8,7 +8,7 @@ def mainScene(scene):
     fontColor = "green"
     btnColor = "black"
 
-    #Vertical positioning for button
+    #Vertical positioning for title/buttons
     titleVp = 3.5
     startVp = 2.5
     settingsVp = 2.1

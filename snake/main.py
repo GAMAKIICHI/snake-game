@@ -27,5 +27,5 @@ while isRunning:
             sys.exit(0)
         
 
-        SCENE_ONE()
+        SCENE_TWO()
         pygame.display.flip()

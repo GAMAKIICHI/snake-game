@@ -25,30 +25,41 @@ class button():
     
     def createButton(self, scene, btnColor:str, text:str, textColor:str, fontSize:int, buttonV:int, w:int, h:int):
 
+        isClicked = False
+
         btnTxt = createText(fontSize, text, textColor)
         btnPosition = centerText(btnTxt, buttonV, w, h)
-        startBtn = pygame.draw.rect(self.scene, btnColor, (btnPosition))
+        drawBtn = pygame.draw.rect(self.scene, btnColor, (btnPosition))
         
         scene.blit(btnTxt, btnPosition)
 
         btnX = btnPosition[0]
         btnY = btnPosition[1]
-        btnL = btnPosition[0] + btnPosition[2]
-        btnW = btnPosition[1] + btnPosition[3]
+        btnW = btnPosition[0] + btnPosition[2]
+        btnH = btnPosition[1] + btnPosition[3]
 
         for event in pygame.event.get():
 
             mouse = pygame.mouse.get_pos()
 
-            if btnX <= mouse[0] <= btnL and btnY <= mouse[1] <= btnW:
+            if btnX <= mouse[0] <= btnW and btnY <= mouse[1] <= btnH:
                 pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_HAND)
                 print("Mouse is over a button")
                 
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    return True
+            # if event.type == pygame.MOUSEBUTTONDOWN:
+            #     if btnX <= mouse[0] <= btnW and btnY <= mouse[1] <= btnH:
+            #         print("Button was clicked")
+            #         isClicked = True
+
             else:
                 pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
                 print("Mouse is not on a button")
+                print(f"Button: {text}")
+                print(f"Button X: {btnX} Button Y: {btnY}")
+                print(f"Width: {btnW} Height: {btnH}")
+                print(f"MouseX: {mouse[0]} MouseY: {mouse[1]}\n")
+
+        return isClicked
 
 
 
