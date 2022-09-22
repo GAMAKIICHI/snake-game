@@ -6,7 +6,7 @@ def mainScene(scene):
     width = 550
     height = 500
     fontColor = "green"
-    btnColor = "red"
+    btnColor = "black"
 
     #Vertical positioning for button
     titleVp = 3.5
