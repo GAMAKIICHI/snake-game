@@ -12,6 +12,7 @@ isRunning = True
 window = display(width, height, "Snake")
 initDisplay = window.display()
 
+#SCENES
 SCENE_ONE = lambda : mainScene(initDisplay)
 SCENE_TWO = lambda: settingScene(initDisplay)
 
