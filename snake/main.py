@@ -7,10 +7,13 @@ width = 550
 height = 500
 
 window = display(width, height, "Snake")
-initDisplay = window.setDisplay()
+initDisplay = window.display()
 
 SCENE_ONE = mainScene(initDisplay)
 SCENE_TWO = settingScene(initDisplay)
 
-SCENE_ONE
-window.render()
+while True:
+    pygame.display.flip()
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()

@@ -14,21 +14,10 @@ class display:
         pygame.display.set_caption(title)
 
     #initialize a window to display
-    def setDisplay(self):
+    def display(self):
         display = pygame.display.set_mode((self.width, self.height))
         
         return display
-
-    #Renders window
-    def render(self):
-        self.isRender = True
-
-        #Required to close window
-        while self.isRender:
-            pygame.display.flip()
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    self.isRender = False
 
 class button():
     def __init__(self, scene) -> None:
@@ -43,14 +32,14 @@ class button():
         scene.blit(btnTxt, centerBtn)
 
         mouse = pygame.mouse.get_pos()
-        while True:
-            scene.blit(btnTxt, centerBtn)
-            for event in pygame.event.get():
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    print("Button was clicked")
-                    pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_HAND)
-                else:
-                    pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
+        # while True:
+        #     scene.blit(btnTxt, centerBtn)
+        #     for event in pygame.event.get():
+        #         if event.type == pygame.MOUSEBUTTONDOWN:
+        #             print("Button was clicked")
+        #             pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_HAND)
+        #         else:
+        #             pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
 
 
 def createText(size, text, color):
