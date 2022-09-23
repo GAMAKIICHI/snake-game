@@ -42,22 +42,18 @@ class button():
 
             mouse = pygame.mouse.get_pos()
 
+            print(f"Button: {text}")
+            print(f"Button X: {btnX} Button Y: {btnY}")
+            print(f"Width: {btnW} Height: {btnH}")
+            print(f"MouseX: {mouse[0]} MouseY: {mouse[1]}\n")
+            print("Mouse is not on a button")
+
             if btnX <= mouse[0] <= btnW and btnY <= mouse[1] <= btnH:
                 pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_HAND)
                 print("Mouse is over a button")
-                
-            # if event.type == pygame.MOUSEBUTTONDOWN:
-            #     if btnX <= mouse[0] <= btnW and btnY <= mouse[1] <= btnH:
-            #         print("Button was clicked")
-            #         isClicked = True
 
             else:
                 pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
-                print("Mouse is not on a button")
-                print(f"Button: {text}")
-                print(f"Button X: {btnX} Button Y: {btnY}")
-                print(f"Width: {btnW} Height: {btnH}")
-                print(f"MouseX: {mouse[0]} MouseY: {mouse[1]}\n")
 
         return isClicked
 
